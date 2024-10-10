@@ -4,7 +4,7 @@
 
 This project explores unsupervised learning techniques with a focus on **Principal Component Analysis (PCA)** and **Independent Component Analysis (ICA)** for dimensionality reduction. The notebook includes toy examples to illustrate these techniques and applies them to a real-world dataset of facial images. It highlights the power of unsupervised methods in discovering structure and reducing dimensionality without labeled data.
 
-The project is implemented entirely in a Jupyter notebook (`.ipynb` file), making it easy to follow and execute.
+The project is implemented entirely in a Jupyter Notebook (`.ipynb` file), making it easy to follow and execute.
 
 ## Theoretical Background
 
@@ -12,17 +12,17 @@ To provide further clarity and insight into the mathematical steps presented, le
 
 ### Geometric Interpretation
 
-The transformation $ Y = XU $ represents the projection of the original data matrix $ X $ into a new coordinate system where the axes are defined by the principal components (the eigenvectors of $ C $). These principal components are orthogonal directions that capture the maximum variance in the data. By projecting $ X $ onto this new basis defined by the matrix $ U $, we align the data along uncorrelated axes.
+The transformation $Y = XU$ represents the projection of the original data matrix $X$ into a new coordinate system where the axes are defined by the principal components (the eigenvectors of $C$). These principal components are orthogonal directions that capture the maximum variance in the data. By projecting $X$ onto this new basis defined by the matrix $U$, we align the data along uncorrelated axes.
 
-The result is that the covariance matrix of the transformed data $ Y $, which is given by $ C_Y = D $, is diagonal. This indicates that the new features (the principal components) are uncorrelated with each other, and the diagonal elements of $ D $ correspond to the variances along each principal component. This diagonalization is a hallmark of PCA, as it simplifies the structure of the data, making it easier to interpret and analyze.
+The result is that the covariance matrix of the transformed data $Y$, which is given by $C_Y = D$, is diagonal. This indicates that the new features (the principal components) are uncorrelated with each other, and the diagonal elements of $D$ correspond to the variances along each principal component. This diagonalization is a hallmark of PCA, as it simplifies the structure of the data, making it easier to interpret and analyze.
 
 ### Eigenvalue Decomposition and Dimensionality Reduction
 
-The decomposition $ C = UDU^T $ reveals that the covariance matrix $ C $ can be factored into its eigenvectors ($ U $) and eigenvalues ($ D $). The eigenvalues in $ D $ represent the amount of variance captured by each principal component, and they are arranged in decreasing order. This structure allows for dimensionality reduction: by selecting only the first few principal components (corresponding to the largest eigenvalues), we can capture most of the variance in the data with fewer dimensions, reducing the complexity of the dataset without losing much information.
+The decomposition $C = UDU^T$ reveals that the covariance matrix $C$ can be factored into its eigenvectors $U$ and eigenvalues $D$. The eigenvalues in $D$ represent the amount of variance captured by each principal component, and they are arranged in decreasing order. This structure allows for dimensionality reduction: by selecting only the first few principal components (corresponding to the largest eigenvalues), we can capture most of the variance in the data with fewer dimensions, reducing the complexity of the dataset without losing much information.
 
 ### Orthogonal Transformations and Preservation of Inner Products
 
-The orthogonal property of $ U $, where $ U^T U = I $, plays a crucial role in preserving certain geometric properties of the data. Specifically, this orthogonal transformation preserves inner products, distances, and angles between vectors. As shown in the proof, the inner product between any two transformed vectors $ y_p $ and $ y_q $ is the same as the inner product between the original vectors $ x_p $ and $ x_q $:
+The orthogonal property of $U$, where $U^T U = I$, plays a crucial role in preserving certain geometric properties of the data. Specifically, this orthogonal transformation preserves inner products, distances, and angles between vectors. As shown in the proof, the inner product between any two transformed vectors $y_p$ and $y_q$ is the same as the inner product between the original vectors $x_p$ and $x_q$:
 
 $$ y_p y_q^T = x_p x_q^T $$
 
@@ -58,7 +58,7 @@ ICA assumes that the observed data is a linear mixture of independent sources, a
 
 - **PCA Implementation**: Applied PCA on toy datasets to illustrate the algorithm’s ability to reduce dimensionality and retain maximum variance. Extended this to a facial image dataset, demonstrating how PCA can capture dominant patterns in faces (e.g., eigenfaces).
 - **ICA Implementation**: Applied ICA to the same datasets, showcasing how it can uncover independent components, which are often more interpretable in real-world applications.
-- **Data Visualization**: Plotted the principal and independent components to visualize the transformations. This includes comparison of how PCA and ICA treat the data differently.
+- **Data Visualization**: Plotted the principal and independent components to visualize the transformations. This includes a comparison of how PCA and ICA treat the data differently.
 - **Face Dataset Results**: Visualized the compressed representations of facial images using PCA and ICA, comparing the reconstructions and extracting insights from the components identified.
 
 ## Notable Results
